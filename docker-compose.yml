@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.2
+    container_name: pg-metodista-kt-db
+    environment:
+      - POSTGRES_DB=metodista-kt-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - .docker/dev_data:/var/lib/postgresql
+#volumes:
+#  dev_data:
